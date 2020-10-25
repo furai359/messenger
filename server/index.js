@@ -27,7 +27,6 @@ index.post('/rooms', (req, res) => {
     ]))
   }
   res.send()
-  /*res.json([...rooms.keys(), ...rooms.values()]);*/
 })
 
 io.on('connection', socket => {
@@ -53,6 +52,7 @@ io.on('connection', socket => {
       if(value.get('users').delete(socket.id)) {
         const users = [...rooms.get(roomID).get('users').values()]
         socket.to(roomID).emit('ROOM:USER_LEFT', {users})
+        if(rooms.get(roomID).get(users).length === 0) rooms.get(roomID).delete()
       }
     })
   })

@@ -1,0 +1,127 @@
+.wrap {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-areas: 'u r'
+                         'u m'
+                         'u i';
+    width:  100%;
+    height: 100%;
+    max-width: 1180px;
+    border-right: var(--border);
+    border-left:  var(--border);
+    box-sizing: border-box;
+    background: whitesmoke;
+}
+
+.usersList {
+    min-width: 150px;
+    border-right: var(--border);
+    grid-area: u;
+    background: whitesmoke;
+}
+
+.roomName {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 50px;
+    border-bottom: var(--border);
+    grid-area: r;
+    background: whitesmoke;
+}
+
+.messages {
+    padding: 10px;
+    overflow-y: auto;
+    grid-area: m;
+    background: white;
+}
+
+.myMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.myMessage > p {
+    width: auto;/*calc(100% - 20px);*/
+    max-width: 500px;
+    min-height: 30px;
+    color: white;
+    margin: 0 0 0 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: right;
+    background: seagreen;
+    word-wrap: break-word;
+}
+
+.myMessage > span {
+    color: gray;
+    font-size: small;
+    text-align: right;
+}
+
+.otherMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 5px;
+}
+.otherMessage > p {
+    width: auto;/*calc(100% - 20px);*/
+    max-width: 500px;
+    min-height: 30px;
+    color: white;
+    margin: 0 20px 0 0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: seagreen;
+    word-wrap: break-word;
+}
+
+.otherMessage > span {
+    color: gray;
+    font-size: small;
+}
+
+.messageInput {
+    display: flex;
+    grid-area:  i;
+    min-height: 100px;
+    max-height: 150px;
+    padding: 10px;
+    border-top: var(--border);
+    background: whitesmoke;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:  100%;
+    height: 100%;
+
+}
+
+.send {
+    width:  100px;
+    height: 100px;
+    border: var(--border);
+    color: white;
+    background: seagreen;
+}
+
+.send:hover {
+    background: limegreen;
+}
+.form > textarea {
+    resize: none;
+    width:  100%;
+    height: 100%;
+    margin-right: 10px;
+}
